@@ -3,6 +3,9 @@ export interface Props {
 	title: string;
 }
 import "../styles/base.pcss";
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+
 
 const { title } = Astro.props;
 ---
@@ -24,8 +27,12 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
+
 	<body>
+		<Header />
+	
 		<slot />
+		<Footer />
 	</body>
 </html>
 
