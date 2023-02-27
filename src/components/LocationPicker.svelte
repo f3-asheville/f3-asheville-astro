@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { userPickedLocation } from '$lib/stores.js';
-	import type { iSchedules } from '$lib/types';
+	import { userPickedLocation } from './stores.js';
+	import type { iSchedules } from '../types';
 
 	export let schedules: iSchedules;
 	const allLocations = schedules.map((schedule) => schedule.AO.neighborhood);

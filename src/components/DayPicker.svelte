@@ -1,6 +1,6 @@
 <script lang="ts">
 	export let uniqueDays: string[];
-	import { userPickedDay } from '$lib/stores.js';
+	import { userPickedDay } from './stores.js';
 
 	let pickedDay: string;
 

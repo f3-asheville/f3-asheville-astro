@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let schedules: iSchedules;
-	import { userPickedDay, userPickedLocation } from '$lib/stores.js';
-	import type { iSchedules } from '$lib/types';
+	import { userPickedDay, userPickedLocation } from './stores.js';
+	import type { iSchedules } from '../types';
 	let pickedDay: string;
 	let pickedLocation: string;
 
