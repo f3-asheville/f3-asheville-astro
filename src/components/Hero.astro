@@ -1,12 +1,18 @@
 ---
-	export let heroImage: any;
-	export let urlFor: any;
 
+	import heroImage from '../images/heroImage.jpg'
 	
 ---
+<style>
+	aside {
+		background-image: url('../images/heroImages.jpg');
+		background-color: red;
+	}
+</style>
+<img src={heroImage} />
 <aside
 	class="h-2/5 lg:h-1/2 max-h-96 bg-cover flex justify-center items-end lg:items-end border-y-4 border-zinc-900"
-	style="background-image: url('https://images.unsplash.com/photo-1677169228294-cf9f3697fb06?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80')"
+	style="background-image: url('')"
 >
 	<a
 		class="text-zinc-100 font-stencil text-4xl lg:text-5xl bg-zinc-800 p-6 lg:p-16 bg-opacity-75 w-full md:text-5xl  hover:text-green-600 flex items-center justify-center"
