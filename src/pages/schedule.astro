@@ -1,19 +1,19 @@
 ---
-import {getSchedules} from "../sanity/api"
-	import DayPicker from '../components/DayPicker.svelte';
-	import DisplaySchedules from '../components/DisplaySchedules.svelte';
-	import LocationMap from '../components/LocationMap.svelte';
-	import LocationPicker from '../components/LocationPicker.svelte';
-	import { userPickedDay } from '../components/stores.js';
-	import Layout from "../layouts/Layout.astro";
+import {getSchedules} from "@sanity/api"
+	import DayPicker from '@components/DayPicker.svelte';
+	import DisplaySchedules from '@components/DisplaySchedules.svelte';
+	import LocationMap from '@components/LocationMap.svelte';
+	import LocationPicker from '@components/LocationPicker.svelte';
+	import { userPickedDay } from '@components/stores.js';
+	import Layout from "@layouts/Layout.astro";
 
-	const schedules = await getSchedules();
-	console.log(schedules);
-	// let schedules = data.schedules;
-	let pickedDay: string;
-	userPickedDay.subscribe((value) => {
-		pickedDay = value;
-	});
+	// const schedules = await getSchedules();
+	// console.log(schedules);
+	// // let schedules = data.schedules;
+	// let pickedDay: string;
+	// userPickedDay.subscribe((value) => {
+	// 	pickedDay = value;
+	// });
 	// const allDays = schedules.map((schedule) => schedule.day).flat();
 	// const uniqueDays = Array.from(new Set(allDays));
 ---
@@ -37,8 +37,8 @@ import {getSchedules} from "../sanity/api"
 	<!-- <LocationMap /> -->
 </div>
 
-	<pre>
+	<!-- <pre>
 {JSON.stringify(schedules, null, 2)}
-</pre>
+</pre> -->
 
 </Layout>
