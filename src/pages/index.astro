@@ -1,81 +1,144 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Hero from '$lib/components/Hero.svelte';
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
 
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
+<!-- <Hero {heroImage} {urlFor} /> -->
+<div class="grid gap-16 max-w-4xl lg:mx-auto lg:my-8 lg:gap-16 mb-8">
+	<section class="grid gap-8 lg:p-8 lg:gap-x-8 lg:gap-y-16 border-zinc-900 border-4 m-4 rounded">
+		<header class="bg-zinc-100 px-4 mt-8">
+			<h2 class=" text-zinc-900 text-center">What is F3?</h2>
+		</header>
+		<div class="grid gap-8 lg:grid-cols-2">
+			<article class="grid gap-4 p-4 lg:p-0">
+				<p class="text-xl">
+					F3 is a men's fitness group. It's totally free: no catches. It's open to all men. It's not
+					led by professionals, but by the guys that show up, rain or shine, heat or cold, every
+					week in the pre-dawn gloom.
+				</p>
+				<p class="text-xl">
+					F3 is more than a bootcamp. It's a chance for friendship. It's an opportunity for men to
+					improve themselves -- through fitness, leadership, community service, and the
+					strengthening of faith.
+				</p>
+				<p class="text-xl">We hope you'll come join us in the gloom some morning.</p>
+			</article>
+
+			<div class="border-t-2 lg:border-none border-zinc-900 flex items-center ">
+				<!-- <iframe
+					src="https://player.vimeo.com/video/143444379?h=f1570f74ee&byline=0"
+					style="position:absolute;top:0;left:0;width:100%;height:100%;"
+					allow="autoplay; fullscreen; picture-in-picture"
+					allowfullscreen
+					title="F3 intro video"
+				/> -->
+				<!-- <lite-vimeo videoid="143444379" /> -->
+			</div>
+		</div>
+	</section>
+
+	<section class="grid">
+		<div class="bg-zinc-800 p-4">
+			<h2 class="mb-4 text-zinc-100">5 Core Principles</h2>
+		</div>
+		<div class="bg-zinc-600 p-4">
+			<h3 class="text-4xl text-zinc-100">All Workouts...</h3>
+		</div>
+		<div class="grid grid-cols-[auto,_1fr] px-4 gap-x-4 gap-y-4 items-center py-4">
+			<h4 class="text-5xl">1.</h4>
+			<p class="text-xl">Are free of charge</p>
+			<h4 class="text-5xl">2.</h4>
+			<p class="text-xl">Are open to all men</p>
+			<h4 class="text-5xl">3.</h4>
+			<p class="text-xl">Are held outdoors, rain or shine, heat or cold</p>
+			<h4 class="text-5xl">4.</h4>
+			<p class="text-xl">
+				Are led by men who participate in the workout in a rotating fashion, with&nbsp;<a
+					href="http://f3nation.com/disclaimer-and-notice/"
+					class="underline text-green-900 underline-offset-2"
+					>no training or certification necessary</a
+				>
+			</p>
+			<h4 class="text-5xl">5.</h4>
+			<p class="text-xl">End with a Circle of Trust</p>
+		</div>
+	</section>
+
+	<section class="grid gap-8 lg:gap-12">
+		<div class="bg-zinc-800 p-4">
+			<h2 class="mb-4 text-zinc-100">The 3 F's</h2>
+		</div>
+		<div class="grid gap-4 px-4">
+			<h3 class="text-3xl lg:text-4xl">Fitness</h3>
+			<p>
+				The backbone of F3 is fitness. Each workout is led in rotation by a volunteer member of the
+				group. The workouts' leaders (“Qs,” in F3 lingo) lead any workout that they wish as long as
+				they can perform it themselves. As a result, F3 members are challenged and pushed in new
+				ways every workout.
+			</p>
+
+			<p>
+				The workouts can take any form, but most adhere to a 'bootcamp' or 'string of pearls' style
+				workout. You do an exercise, or set of exercises, run somewhere, rinse, repeat. Weekday
+				workouts are 45 minutes including a warmup at the beginning and a huddle-up 'Circle of
+				Trust' at the end. Weekend workouts start later and last an hour.
+			</p>
+		</div>
+
+		<div class="grid gap-4 px-4">
+			<h3 class="text-3xl lg:text-4xl">Fellowship</h3>
+			<p>
+				Let's face it, for many men it's hard to form the kind of friendships that they remember
+				from high-school or college. Do you have someone who would visit you if you're laid out with
+				an injury? Do you know someone that could help you move? Do you have friends that would
+				listen to a problem you're having and really want to help? Do you have friends you could do
+				any of these things for?
+			</p>
+			<p>
+				F3 is a long way from touchy-feely, but fellowship is important to us. Around the challenge
+				and structure of F3, men form friendships and are given the opportunity to help one another
+				in the spirit of fellowship. We suffer together in the workouts. We serve together in group
+				community service. Every workout ends with a chance for us to share something we need help
+				with, something we're grieving over, or something we're celebrating.
+			</p>
+		</div>
+
+		<div class="grid gap-4 px-4">
+			<h3 class="text-3xl lg:text-4xl">Faith</h3>
+			<p>
+				Every workout ends with a Circle of Trust (CoT), and every CoT ends with a brief “shout-out”
+				by that day's leader. They are free to pray to their god or to speak from a secular
+				perspective — F3 is open to men of all faiths and no faith. The closing shout-out is
+				generally the only faith-specific component of a workout. We do it because we are thankful
+				for the opportunity to come together and build ourselves into better men. We do it because
+				the vocal and corporate expression of that gratitude builds a stronger F3 community.
+			</p>
+			<p>
+				Try not to be weirded out by the expression of faith! We make a real effort to be inclusive
+				to all men. No one is going to bug you to come to their church. We're not a cult. Faith is
+				an important part of a lot of our lives, maybe it is or could be a part of yours too. Or
+				maybe not. We just ask that each of our members stand respectfully while the workout leader
+				speaks their truth.
+			</p>
+		</div>
+	</section>
+</div>
+<aside class="flex items-center justify-center bg-zinc-800 h-1/4 max-h-60">
+	<a
+		class="p-8 text-5xl text-center text-zinc-100 font-stencil hover:text-green-600 h-full w-full flex items-center justify-center"
+		href="/schedule"
+	>
+		Find a Workout Now!
+	</a>
+</aside>
+
+<!-- {#if heroImage && heroImage.length}
+			<pre>
+				{JSON.stringify(heroImage, null, 2)}
+		</pre>
+		{:else}
+			<p>Your data will show up here when you've configured everything correctly</p>
+		{/if} -->
+
