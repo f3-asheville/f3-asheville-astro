@@ -1,22 +1,32 @@
-import { useSanityClient, groq } from 'astro-sanity';
-import type { iSchedules } from '../types';
+import { useSanityClient, groq } from "astro-sanity";
+import type { iEvents, iSchedules } from "../types";
 
 const dummySchedules: iSchedules = [
   {
     AO: {
       location_geopoint: {
-        _type: 'geopoint',
+        _type: "geopoint",
         lat: 35.594635,
         lng: -82.56195799999999,
       },
-      location_name: 'SowTrue Seed Parking Lot',
-      name: 'Mission',
-      neighborhood: 'Asheville',
+      location_name: "SowTrue Seed Parking Lot",
+      name: "Mission",
+      neighborhood: "Asheville",
     },
-    day: ['Saturday'],
-    name: 'Mission',
-    start_time: '07:00',
-    style: 'Bootcamp',
+    day: ["Saturday"],
+    name: "Mission",
+    start_time: "07:00",
+    style: "Bootcamp",
+  },
+];
+
+const dummyEvent = [
+  {
+    date_time: "now",
+    location: "here",
+    name: "placeholder",
+    organizer: "Pax X",
+    notes: "lorem ipsum",
   },
 ];
 
@@ -30,6 +40,21 @@ export async function getSchedules() {
   } else {
     return {
       schedules: dummySchedules,
+    };
+  }
+}
+
+const now = new Date().toISOString();
+export async function getEvents() {
+  const query = groq`*[_type == "events" && date_time > '${now}']{location, name, date_time, organizer, notes} | order(date_time asc)`;
+  const events: iEvents = await useSanityClient().fetch(query);
+  if (events) {
+    return {
+      events: events,
+    };
+  } else {
+    return {
+      events: dummyEvent,
     };
   }
 }

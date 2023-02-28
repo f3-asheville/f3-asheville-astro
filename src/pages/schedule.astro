@@ -1,44 +1,18 @@
 ---
-import {getSchedules} from "@sanity/api"
-	import DayPicker from '@components/DayPicker.svelte';
-	import DisplaySchedules from '@components/DisplaySchedules.svelte';
-	import LocationMap from '@components/LocationMap.svelte';
-	import LocationPicker from '@components/LocationPicker.svelte';
-	import { userPickedDay } from '@components/stores.js';
-	import Layout from "@layouts/Layout.astro";
-
-	// const schedules = await getSchedules();
-	// console.log(schedules);
-	// // let schedules = data.schedules;
-	// let pickedDay: string;
-	// userPickedDay.subscribe((value) => {
-	// 	pickedDay = value;
-	// });
-	// const allDays = schedules.map((schedule) => schedule.day).flat();
-	// const uniqueDays = Array.from(new Set(allDays));
+import { getSchedules } from "@sanity/api";
+import Layout from "@layouts/Layout.astro";
+import Schedule from "@components/Schedule.svelte";
+import LocationMap from "@components/LocationMap.astro";
+const { schedules } = await getSchedules();
 ---
 
 <!-- ToDo: Make map reactive. Only display selected locations. -->
-<Layout title="schedule">	
-<div class="grid gap-4 mx-4 my-8 max-w-4xl md:mx-auto">
-	<header>
-		<h1>Schedule</h1>
-	</header>
-
-	<!-- <section class="grid gap-4 ">
-		<div class="grid gap-4 md:grid-cols-2 bg-zinc-300 p-4">
-			<LocationPicker {schedules} />
-			<DayPicker {uniqueDays} />
-		</div>
-		<div class="flex flex-wrap gap-4 ">
-			<DisplaySchedules {schedules} />
-		</div>
-	</section> -->
-	<!-- <LocationMap /> -->
-</div>
-
-	<!-- <pre>
-{JSON.stringify(schedules, null, 2)}
-</pre> -->
-
+<Layout title="schedule">
+  <div class="grid gap-4 mx-4 my-8 max-w-4xl md:mx-auto">
+    <header>
+      <h1>Schedule</h1>
+    </header>
+    <Schedule schedules={schedules} client:load />
+    <LocationMap />
+  </div>
 </Layout>

@@ -1,0 +1,46 @@
+---
+import LocationMap from "@components/LocationMap.astro";
+import { Icon } from "astro-icon";
+import Layout from "@layouts/Layout.astro";
+---
+
+<svelte:head>
+  <title></title>
+</svelte:head>
+
+<Layout title="F3-Avl-Contact">
+  <div class="mx-4 my-8 grid gap-4 max-w-4xl md:mx-auto">
+    <header>
+      <h2>Contact Page</h2>
+    </header>
+    <div class="grid gap-8">
+      <section class="grid gap-4">
+        <h3 class="text-4xl">F3 Asheville Region Map</h3>
+        <LocationMap />
+      </section>
+      <section class="grid gap-4">
+        <h3 class="text-4xl">Social Media</h3>
+        <div class="flex gap-4">
+          <a
+            class="text-zinc-900 hover:text-green-600"
+            href="https://twitter.com/f3asheville"
+          >
+            <Icon name="mdi:twitter" class="h-16 text-zinc-800" />
+          </a>
+          <a
+            class="text-zinc-900 hover:text-green-600"
+            href="http://facebook.com/f3ashville/"
+          >
+            <Icon class="h-16 text-zinc-800" name="mdi:facebook" />
+          </a>
+          <a
+            class="text-zinc-900 hover:text-green-600"
+            href="https://www.instagram.com/f3asheville/"
+          >
+            <Icon class="h-16 text-zinc-800" name="mdi:instagram" />
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
