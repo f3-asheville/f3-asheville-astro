@@ -1,3 +1,5 @@
-# astrov2-trial
+# f3-asheville
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/github-pdvrxb)
+## Written in Astro
+
+Exploring using Astro instead of SvelteKit.
