@@ -6,10 +6,10 @@ const imageString = `bg-[url(${heroImage})]`;
 
 <!-- <aside
   class=`h-2/5 lg:h-1/2 max-h-96 bg-cover flex justify-center items-end lg:items-end border-y-4 border-zinc-900`
-> -->
+> --><!-- ToDo: get image dialed in -->
 <aside class=`border-y-4 border-zinc-900 relative`>
   <a
-    class="text-zinc-100 font-stencil text-4xl lg:text-5xl bg-zinc-800 p-6 lg:p-16 bg-opacity-75 w-full md:text-5xl hover:text-green-600 flex items-center justify-center absolute bottom-0"
+    class="absolute bottom-0 flex w-full items-center justify-center bg-zinc-800 bg-opacity-75 p-6 font-stencil text-4xl text-zinc-100 hover:text-green-600 md:text-5xl lg:p-16 lg:text-5xl"
     href="/schedule">Find a Workout!</a
   >
   <Picture
@@ -18,7 +18,6 @@ const imageString = `bg-[url(${heroImage})]`;
     sizes="(max-width: 2400px) 2400px, (max-width:1600) 1600px, (max-width:800) 800px"
     alt="banner image"
     aspectRatio="2400:1350"
-    quality="50"
-    class=""
+    quality={50}
   />
 </aside>

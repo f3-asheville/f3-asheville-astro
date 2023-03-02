@@ -3,28 +3,34 @@ import { Icon } from "astro-icon";
 ---
 
 <footer
-  class="flex justify-between px-4 py-2 border-t-4 shadow border-zinc-900"
+  class="flex items-center justify-between border-t-4 border-zinc-900 px-4 py-2 shadow"
 >
   <p>2023</p>
   <div class="flex gap-4">
-    <a
-      class="text-zinc-900 hover:text-green-600"
-      href="https://twitter.com/f3asheville"
-    >
-      <Icon name="mdi:twitter" class="h-8 text-zinc-800" />
+    <a href="https://twitter.com/f3asheville">
+      <Icon name="mdi:twitter" class="h-8 text-zinc-800 hover:text-green-600" />
     </a>
-    <a
-      class="text-zinc-900 hover:text-green-600"
-      href="http://facebook.com/f3ashville/"
-    >
-      <Icon class="h-8 text-zinc-800" name="mdi:facebook" />
+    <a href="http://facebook.com/f3ashville/">
+      <Icon
+        class="h-8 text-zinc-800 hover:text-green-600"
+        name="mdi:facebook"
+      />
     </a>
-    <a
-      class="text-zinc-900 hover:text-green-600"
-      href="https://www.instagram.com/f3asheville/"
-    >
-      <Icon class="h-8 text-zinc-800" name="mdi:instagram" />
+    <a href="https://www.instagram.com/f3asheville/">
+      <Icon
+        class="h-8 text-zinc-800 hover:text-green-600"
+        name="mdi:instagram"
+      />
     </a>
   </div>
-  <a href="https://aaronhubbard.dev">akh dev</a>
+  <a href="https://www.aaronhubbard.dev" class="flex items-center">
+    <svg
+      class="h-6 w-6 fill-zinc-900 hover:fill-green-600"
+      viewBox="0 0 52.813 36.709"
+      xmlns="http://www.w3.org/2000/svg"
+      ><path
+        d="m234.49 246.277 51.39 138.744h.27V246.277Zm87.754 0v52.733h53.25v-52.733zm-109.45 32.202-19.218 55.687h38.344zm109.45 47.812v58.73h53.25v-58.73zm-137.668 33.844-8.691 24.886h73.728l-8.6-24.886z"
+        transform="matrix(.26458 0 0 .26458 -46.536 -65.16)"></path></svg
+    >
+  </a>
 </footer>

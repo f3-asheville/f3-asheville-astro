@@ -1,19 +1,20 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Hero from "@components/Hero.astro";
+import { YouTube } from "astro-embed";
 ---
 
 <Layout title="F3 Asheville">
   <Hero />
-  <div class="grid gap-16 max-w-4xl lg:mx-auto lg:my-8 lg:gap-16 mb-8">
+  <div class="mb-8 grid max-w-4xl gap-16 lg:mx-auto lg:my-8 lg:gap-16">
     <section
-      class="grid gap-8 lg:p-8 lg:gap-x-8 lg:gap-y-16 border-zinc-900 border-4 m-4 rounded"
+      class="m-4 grid gap-8 rounded border-4 border-zinc-900 bg-zinc-300 p-8 md:m-0 lg:gap-x-8 lg:gap-y-16"
     >
-      <header class="bg-zinc-50 px-4 mt-8">
-        <h2 class="text-zinc-900 text-center">What is F3?</h2>
+      <header class="px-4">
+        <h2 class="text-center text-zinc-900">What is F3?</h2>
       </header>
       <div class="grid gap-8 lg:grid-cols-2">
-        <article class="grid gap-4 p-4 lg:p-0">
+        <article class="grid gap-4 lg:p-0">
           <p class="text-xl">
             F3 is a men's fitness group. It's totally free: no catches. It's
             open to all men. It's not led by professionals, but by the guys that
@@ -29,22 +30,11 @@ import Hero from "@components/Hero.astro";
             We hope you'll come join us in the gloom some morning.
           </p>
         </article>
-
-        <div
-          class="border-t-2 lg:border-none border-zinc-900 flex items-center"
-        >
-          <!-- <iframe
-					src="https://player.vimeo.com/video/143444379?h=f1570f74ee&byline=0"
-					style="position:absolute;top:0;left:0;width:100%;height:100%;"
-					allow="autoplay; fullscreen; picture-in-picture"
-					allowfullscreen
-					title="F3 intro video"
-				/> -->
-          <!-- <lite-vimeo videoid="143444379" /> -->
+        <div class="flex items-center justify-center">
+          <YouTube id="rGo03Y1ZZ3I" class="h-auto w-full" />
         </div>
       </div>
     </section>
-
     <section class="grid">
       <div class="bg-zinc-800 p-4">
         <h2 class="mb-4 text-zinc-100">5 Core Principles</h2>
@@ -53,7 +43,7 @@ import Hero from "@components/Hero.astro";
         <h3 class="text-4xl text-zinc-100">All Workouts...</h3>
       </div>
       <div
-        class="grid grid-cols-[auto,_1fr] px-4 gap-x-4 gap-y-4 items-center py-4"
+        class="grid grid-cols-[auto,_1fr] items-center gap-x-4 gap-y-4 px-4 py-4"
       >
         <h4 class="text-5xl">1.</h4>
         <p class="text-xl">Are free of charge</p>
@@ -66,7 +56,7 @@ import Hero from "@components/Hero.astro";
           Are led by men who participate in the workout in a rotating fashion,
           with&nbsp;<a
             href="http://f3nation.com/disclaimer-and-notice/"
-            class="underline text-green-900 underline-offset-2"
+            class="text-green-900 underline underline-offset-2"
             >no training or certification necessary</a
           >
         </p>
@@ -142,20 +132,12 @@ import Hero from "@components/Hero.astro";
       </div>
     </section>
   </div>
-  <aside class="flex items-center justify-center bg-zinc-800 h-1/4 max-h-60">
+  <aside class="flex h-1/4 max-h-60 items-center justify-center bg-zinc-800">
     <a
-      class="p-8 text-5xl text-center text-zinc-100 font-stencil hover:text-green-600 h-full w-full flex items-center justify-center"
+      class="flex h-full w-full items-center justify-center p-8 text-center font-stencil text-5xl text-zinc-100 hover:text-green-600"
       href="/schedule"
     >
       Find a Workout Now!
     </a>
   </aside>
-
-  <!-- {#if heroImage && heroImage.length}
-			<pre>
-				{JSON.stringify(heroImage, null, 2)}
-		</pre>
-		{:else}
-			<p>Your data will show up here when you've configured everything correctly</p>
-		{/if} -->
 </Layout>

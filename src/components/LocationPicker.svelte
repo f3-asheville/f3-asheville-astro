@@ -11,11 +11,10 @@
   userPickedLocation.subscribe((value) => {
     pickedLocation = value;
   });
-  console.log({ pickedLocation });
 </script>
 
 <div>
-  <p class="font-stencil text-2xl">Filter by Location</p>
+  <p class="font-stencil text-3xl">Filter by Location</p>
   <div class="flex flex-wrap gap-1">
     <button
       class={`${
