@@ -7,23 +7,33 @@ import { Icon } from "astro-icon";
 >
   <p>2023</p>
   <div class="flex gap-4">
-    <a href="https://twitter.com/f3asheville">
+    <a aria-label="open F3 Twitter page" href="https://twitter.com/f3asheville">
       <Icon name="mdi:twitter" class="h-8 text-zinc-800 hover:text-green-600" />
     </a>
-    <a href="http://facebook.com/f3ashville/">
+    <a
+      aria-label="open F3 Facebook page"
+      href="http://facebook.com/f3ashville/"
+    >
       <Icon
         class="h-8 text-zinc-800 hover:text-green-600"
         name="mdi:facebook"
       />
     </a>
-    <a href="https://www.instagram.com/f3asheville/">
+    <a
+      aria-label="open F3 Instagram page"
+      href="https://www.instagram.com/f3asheville/"
+    >
       <Icon
         class="h-8 text-zinc-800 hover:text-green-600"
         name="mdi:instagram"
       />
     </a>
   </div>
-  <a href="https://www.aaronhubbard.dev" class="flex items-center">
+  <a
+    aria-label="site developer's home page"
+    href="https://www.aaronhubbard.dev"
+    class="flex items-center"
+  >
     <svg
       class="h-6 w-6 fill-zinc-900 hover:fill-green-600"
       viewBox="0 0 52.813 36.709"

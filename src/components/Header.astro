@@ -1,23 +1,37 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Picture } from "@astrojs/image/components";
 
 import logo from "@images/f3.png";
+// const { width, height } = (await import(`../images/${filename}.jpg`)).default
+
+const { height, width } = logo;
 ---
 
 <header
-  class="grid gap-4 border-b-8 border-zinc-900 p-2 shadow lg:mt-4 lg:justify-center lg:gap-12"
+  class="grid gap-4 border-b-8 border-zinc-900 p-2 shadow sm:p-4 lg:mt-4 lg:justify-center lg:gap-12"
 >
-  <a href="/" class="grid grid-cols-[auto,_1fr] items-center gap-4 lg:gap-20">
-    <Image
-      class="h-16 w-14 md:h-60 md:w-52"
-      alt="The F3 Asheville logo"
-      src={logo}
-      quality="50"
-    />
+  <a
+    href="/"
+    class="grid grid-cols-[auto,_1fr] items-center justify-start gap-4 lg:gap-20"
+  >
+    <div class="w-16 sm:w-24 md:w-32 lg:w-40 2xl:w-52">
+      <Picture
+        widths={[80, 160, 240]}
+        sizes="(max-width: 600) 80px, (max-width:800) 160px"
+        alt="The F3 Asheville logo"
+        src={logo}
+        aspectRatio={width / height}
+        quality={50}
+        format="webp"
+        width={width}
+        height={height}
+        loading="eager"
+      />
+    </div>
     <div>
-      <h1 class="text-5xl md:text-8xl">F3 Asheville</h1>
+      <h1 class="text-5xl sm:text-6xl md:text-8xl">F3 Asheville</h1>
 
-      <h2 class="text-2xl text-zinc-600 md:text-5xl">
+      <h2 class="text-2xl text-zinc-600 sm:text-4xl md:text-5xl">
         Fitness.Fellowship.Faith.
       </h2>
     </div>
@@ -25,21 +39,30 @@ import logo from "@images/f3.png";
   <nav>
     <ul class="flex justify-between gap-4">
       <li>
-        <a href="/" class="font-stencil hover:text-green-600 md:text-xl">Home</a
+        <a
+          href="/"
+          class="font-stencil hover:text-green-600 md:text-xl xl:text-2xl"
+          >Home</a
         >
       </li>
       <li>
-        <a href="/schedule" class="font-stencil hover:text-green-600 md:text-xl"
+        <a
+          href="/schedule"
+          class="font-stencil hover:text-green-600 md:text-xl xl:text-2xl"
           >Schedule</a
         >
       </li>
       <li>
-        <a href="/events" class="font-stencil hover:text-green-600 md:text-xl"
+        <a
+          href="/events"
+          class="font-stencil hover:text-green-600 md:text-xl xl:text-2xl"
           >Upcoming Events</a
         >
       </li>
       <li>
-        <a href="/contact" class="font-stencil hover:text-green-600 md:text-xl"
+        <a
+          href="/contact"
+          class="font-stencil hover:text-green-600 md:text-xl xl:text-2xl"
           >Contact</a
         >
       </li>
