@@ -1,5 +1,6 @@
 import { useSanityClient, groq } from "astro-sanity";
 import type { iEvents, iSchedules } from "../types";
+import imageUrlBuilder from "@sanity/image-url";
 
 const dummySchedules: iSchedules = [
   {
@@ -57,4 +58,27 @@ export async function getEvents() {
       events: dummyEvent,
     };
   }
+}
+
+const builder = imageUrlBuilder(useSanityClient());
+
+function urlFor(source) {
+  return builder.image(source);
+}
+
+export async function getHeroImage() {
+  const heroImage = await useSanityClient().fetch(
+    `*[_type == "heroImage" && current==true]`
+  );
+
+  if (heroImage) {
+    return {
+      heroImage,
+      urlFor,
+    };
+  }
+  return {
+    status: 500,
+    body: new Error("Internal Server Error fetching HeroImage"),
+  };
 }
