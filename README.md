@@ -1,5 +1,5 @@
 # f3-asheville
 
-## Written in Astro
+## Landing Page for F3 Asheville
 
-Exploring using Astro instead of SvelteKit.
+This is a website to allow F3-Asheville to communicate with the public via the World Wide Web.
