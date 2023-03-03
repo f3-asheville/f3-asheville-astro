@@ -2,6 +2,7 @@
 import { Picture } from "@astrojs/image/components";
 import heroImage from "@images/heroImage.webp";
 const imageString = `bg-[url(${heroImage})]`;
+const { height, width } = heroImage;
 ---
 
 <!-- ToDo: get image dialed in --><!-- ToDo: hook up image to Sanity -->
@@ -13,9 +14,11 @@ const imageString = `bg-[url(${heroImage})]`;
   <Picture
     src={heroImage}
     widths={[500, 800, 1200]}
+    height={height}
+    width={width}
     sizes="(max-width: 1200) 1200px, (max-width:800) 800px, (max-width:500) 500px"
     alt="probably guys working out"
-    aspectRatio="2400:1350"
+    aspectRatio={width / height}
     class="mx-auto w-full max-w-6xl"
     loading="eager"
   />

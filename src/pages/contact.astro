@@ -11,36 +11,45 @@ import Layout from "@layouts/Layout.astro";
 <Layout title="F3-Avl-Contact">
   <div class="mx-4 my-8 grid max-w-4xl gap-4 md:mx-auto">
     <header>
-      <h2>Contact Page</h2>
+      <h2 class="text-5xl">Contact Page</h2>
     </header>
-    <div class="grid gap-8">
+    <div class="grid gap-16">
       <section class="grid gap-4">
         <h3 class="text-4xl">F3 Asheville Region Map</h3>
         <LocationMap />
       </section>
-      <section class="grid gap-4">
-        <h3 class="text-4xl">Social Media</h3>
-        <div class="flex gap-4">
+      <section class="grid gap-8">
+        <h3 class="text-center text-5xl sm:text-left">Social Media</h3>
+        <div class="flex w-full justify-around sm:justify-start sm:gap-8">
           <a
-            class="text-zinc-900 hover:text-green-600"
+            class="text-zinc-900"
             href="https://twitter.com/f3asheville"
             aria-label="open F3 Twitter page"
           >
-            <Icon name="mdi:twitter" class="h-16 text-zinc-800" />
+            <Icon
+              name="mdi:twitter"
+              class="h-16 text-zinc-800 hover:text-green-600"
+            />
           </a>
           <a
-            class="text-zinc-900 hover:text-green-600"
+            class="text-zinc-900"
             aria-label="open F3 Facebook page"
             href="http://facebook.com/f3ashville/"
           >
-            <Icon class="h-16 text-zinc-800" name="mdi:facebook" />
+            <Icon
+              class="h-16 text-zinc-800 hover:text-green-600"
+              name="mdi:facebook "
+            />
           </a>
           <a
-            class="text-zinc-900 hover:text-green-600"
+            class="text-zinc-900"
             href="https://www.instagram.com/f3asheville/"
             aria-label="open F3 Instagram page"
           >
-            <Icon class="h-16 text-zinc-800" name="mdi:instagram" />
+            <Icon
+              class="h-16 text-zinc-800 hover:text-green-600"
+              name="mdi:instagram"
+            />
           </a>
         </div>
       </section>
