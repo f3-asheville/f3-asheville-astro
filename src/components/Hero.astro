@@ -1,11 +1,9 @@
 ---
-import { Picture } from "@astrojs/image/components";
-import oldheroImage from "@images/heroImage.webp";
 import { getHeroImage } from "@sanity/api";
-const imageString = `bg-[url(${oldheroImage})]`;
 const { heroImage, urlFor } = await getHeroImage();
 const wideURL = urlFor(heroImage[0].image)
   .width(1200)
+  .height(801)
   .quality(80)
   .saturation(-100)
   .url();
@@ -17,9 +15,11 @@ const phoneURL = urlFor(heroImage[0].image)
 const srcset = `${wideURL} 1200w, ${phoneURL} 600w`;
 ---
 
-<aside class="relative border-y-4 border-zinc-900 bg-zinc-900">
+<aside
+  class="relative border-y-4 border-zinc-900 bg-zinc-900 lg:h-3/4 lg:overflow-hidden"
+>
   <a
-    class="absolute bottom-0 flex w-full items-center justify-center bg-zinc-900 bg-opacity-75 p-6 font-stencil text-4xl text-zinc-100 hover:text-green-600 md:text-5xl lg:p-16 lg:text-5xl"
+    class="absolute bottom-0 flex w-full items-center justify-center bg-zinc-900 bg-opacity-75 p-6 font-stencil text-4xl text-zinc-100 hover:text-green-600 md:text-5xl lg:p-16"
     href="/schedule">Find a Workout!</a
   >
   <img
@@ -28,5 +28,7 @@ const srcset = `${wideURL} 1200w, ${phoneURL} 600w`;
     alt="Probably guys working out"
     sizes="(max-width: 600px) 600px, 1200px"
     class="mx-auto"
+    width="1200px"
+    height="800px"
   />
 </aside>
