@@ -18,7 +18,7 @@
     <div
       class="grid grid-rows-[auto,_1fr] items-start p-6 mb-4 border-4 rounded shadow bg-zinc-300 border-zinc-900 max-w-md"
     >
-      <h2 class="pb-4">{event.name}</h2>
+      <h2 class="pb-4 text-4xl">{event.name}</h2>
       <div class="flex flex-col gap-2 ">
         <p>Event Date: {parseDate(event.date_time)}</p>
         <p>Start Time: {parseTime(event.date_time)}</p>
