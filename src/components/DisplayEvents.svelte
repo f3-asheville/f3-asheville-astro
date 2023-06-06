@@ -16,7 +16,7 @@
     return wideURL;
   }
   function makePhoneURL(sanityImage) {
-    const phoneURL = urlFor(sanityImage).width(500).quality(80).url();
+    const phoneURL = urlFor(sanityImage).width(600).quality(80).url();
     return phoneURL;
   }
 
@@ -32,19 +32,21 @@
       class=" p-6 mb-4 border-4 rounded shadow bg-zinc-300 border-zinc-900 max-w-xl"
     >
       {#if event.image}
-        <img
-          srcset={`${makeWideURL(event.image)} 1200w, ${makePhoneURL(
-            event.image
-          )} 600w`}
-          src={makePhoneURL(event.image)}
-          alt="F3 event"
-          sizes="(max-width: 600px) 600px, 1200px"
-          class=""
-          width="1200px"
-          height="1200px"
-        />
+        <div class="w-full">
+          <img
+            srcset={`${makeWideURL(event.image)} 1200w, ${makePhoneURL(
+              event.image
+            )} 600w`}
+            src={makePhoneURL(event.image)}
+            alt="F3 event"
+            sizes="(max-width: 600px) 600px, 1200px"
+            class=""
+            width="1200px"
+            height="1200px"
+          />
+        </div>
       {/if}
-      <h2 class="mt-4 pb-4 text-5xl">{event.name}</h2>
+      <h2 class="mt-4 pb-4 text-3xl md:text-5xl">{event.name}</h2>
       <div class="flex flex-col gap-2">
         <p>Event Date: {parseDate(event.date_time)}</p>
         <p>Start Time: {parseTime(event.date_time)}</p>

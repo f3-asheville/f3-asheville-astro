@@ -2,7 +2,6 @@
 import { getSchedules } from "@sanity/api";
 import Layout from "@layouts/Layout.astro";
 import Schedule from "@components/Schedule.svelte";
-import LocationMap from "@components/LocationMap.astro";
 const { schedules } = await getSchedules();
 ---
 
@@ -13,6 +12,5 @@ const { schedules } = await getSchedules();
       <h1>Schedule</h1>
     </header>
     <Schedule schedules={schedules} client:load />
-    <LocationMap />
   </div>
 </Layout>
