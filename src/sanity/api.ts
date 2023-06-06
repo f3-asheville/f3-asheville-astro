@@ -47,11 +47,13 @@ export async function getSchedules() {
 
 const now = new Date().toISOString();
 export async function getEvents() {
-  const query = groq`*[_type == "events" && date_time > '${now}']{location, name, date_time, organizer, notes} | order(date_time asc)`;
+  // const query = groq`*[_type == "events" && date_time > '${now}']{location, name, date_time, organizer, notes} | order(date_time asc)`;
+  const query = groq`*[_type == "events"]{location, name, date_time, organizer, image} | order(date_time desc)`;
   const events: iEvents = await useSanityClient().fetch(query);
   if (events) {
     return {
       events: events,
+      urlFor,
     };
   } else {
     return {
