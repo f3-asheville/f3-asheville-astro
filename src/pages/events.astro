@@ -13,11 +13,13 @@ const { events, urlFor } = await getEvents();
 <!-- ToDo: add option for seeing all events -->
 <Layout title="F3-Avl-Events">
   <div class="m-4 my-8 grid max-w-4xl gap-4 md:mx-auto lg:gap-8">
-    <h1 class="mb-4">Upcoming Events</h1>
+    <h1 class="text-center text-7xl">Upcoming Events</h1>
 
-    <div class="flex flex-col flex-wrap gap-4 lg:flex-row">
+    <div
+      class="flex flex-col flex-wrap items-center justify-center gap-4 lg:flex-row"
+    >
       <DisplayEvents events={events} urlFor={urlFor} />
     </div>
-    <InstagramFeed />
+    <!-- <InstagramFeed /> -->
   </div>
 </Layout>

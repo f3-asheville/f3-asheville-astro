@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        stencil: ["rafika"],
+        // stencil: ["rafika"],
+        stencil: ["Stardos Stencil"],
         roboto: ["roboto"],
       },
     },
