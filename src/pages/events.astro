@@ -17,7 +17,7 @@ const { events, urlFor } = await getEvents();
     <div
       class="mx-4 flex flex-col flex-wrap items-center justify-center gap-4 lg:flex-row"
     >
-      <DisplayEvents events={events} urlFor={urlFor} />
+      <DisplayEvents events={events} urlFor={urlFor} client:load />
     </div>
   </div>
 </Layout>

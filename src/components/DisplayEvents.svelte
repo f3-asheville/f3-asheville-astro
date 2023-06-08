@@ -12,17 +12,30 @@
     return eventDateObject.toLocaleDateString();
   }
   function makeWideURL(sanityImage) {
-    const wideURL = urlFor(sanityImage).width(1200).quality(80).url();
+    const wideURL = urlFor(sanityImage)
+      .width(520)
+      .quality(80)
+      .format("webp")
+      .url();
     return wideURL;
   }
   function makePhoneURL(sanityImage) {
-    const phoneURL = urlFor(sanityImage).width(600).quality(80).url();
+    const phoneURL = urlFor(sanityImage)
+      .width(400)
+      .quality(80)
+      .format("webp")
+      .url();
     return phoneURL;
   }
+  function makeFallbackURL(sanityImage) {
+    const fallbackURL = urlFor(sanityImage)
+      .width(520)
+      .quality(80)
+      .format(".png")
+      .url();
+    return fallbackURL;
+  }
 
-  // const srcset = `${wideURL} 1200w, ${phoneURL} 600w`;
-
-  // export let allEvents: any;
   console.log({ events });
 </script>
 
@@ -33,17 +46,33 @@
     >
       {#if event.image}
         <div class="w-full">
-          <img
-            srcset={`${makeWideURL(event.image)} 1200w, ${makePhoneURL(
+          <picture>
+            <source
+              media="(max-width: 450px)"
+              srcset={`${makePhoneURL(event.image)}`}
+            />
+            <source
+              media="(min-width: 450px)"
+              srcset={`${makeWideURL(event.image)}`}
+            />
+            <img
+              src={makeFallbackURL(event.image)}
+              alt="F3 event"
+              sizes="(max-width: 450px) 400px, 520px"
+              width="520px"
+              height="520px"
+            />
+          </picture>
+          <!-- <img
+            srcset={`${makeWideURL(event.image)} 520w, ${makePhoneURL(
               event.image
-            )} 600w`}
+            )} 400w`}
             src={makePhoneURL(event.image)}
             alt="F3 event"
-            sizes="(max-width: 600px) 600px, 1200px"
-            class=""
-            width="1200px"
-            height="1200px"
-          />
+            sizes="(max-width: 450px) 400px, 520px"
+            width="520px"
+            height="520px"
+          /> -->
         </div>
       {/if}
       <h2 class="mt-4 pb-4 text-3xl md:text-5xl">{event.name}</h2>

@@ -30,7 +30,7 @@
         }}
         class={`${
           day == pickedLocation ? "bg-red-600" : "bg-zinc-700"
-        } px-4 py-1 text-md  text-zinc-100 font-stencil uppercase font-bold w-full`}
+        } px-4 py-1 text-lg  text-zinc-100 font-stencil uppercase font-bold w-full`}
         >{day}</button
       >
     {/each}
