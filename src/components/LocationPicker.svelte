@@ -14,12 +14,11 @@
 </script>
 
 <div>
-  <p class="font-stencil text-3xl uppercase font-bold">Filter by Location</p>
-  <div class="flex flex-wrap gap-1">
+  <div class="flex flex-wrap gap-1 bg-zinc-800">
     <button
       class={`${
         "All" == pickedLocation ? "bg-red-600" : "bg-zinc-700"
-      } px-4 pb-1 pt-2 text-lg rounded  text-zinc-100 font-stencil uppercase font-bold shadow`}
+      } px-4 pb-1 pt-2 text-lg   text-zinc-100 font-stencil uppercase font-bold shadow w-full`}
       on:click={() => {
         userPickedLocation.set("All");
       }}>All</button
@@ -31,7 +30,7 @@
         }}
         class={`${
           day == pickedLocation ? "bg-red-600" : "bg-zinc-700"
-        } px-4 py-1 text-lg rounded  text-zinc-100 font-stencil uppercase font-bold`}
+        } px-4 py-1 text-md  text-zinc-100 font-stencil uppercase font-bold w-full`}
         >{day}</button
       >
     {/each}

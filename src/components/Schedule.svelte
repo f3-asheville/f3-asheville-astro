@@ -2,30 +2,50 @@
   import DayPicker from "@components/DayPicker.svelte";
   import DisplaySchedules from "@components/DisplaySchedules.svelte";
   import LocationPicker from "@components/LocationPicker.svelte";
-  import { userPickedDay } from "@components/stores.js";
+  import { userPickedDay, userPickedLocation } from "@components/stores.js";
   import LocationMap from "@components/LocationMap.svelte";
 
-  // const {schedules} = Astro.props;
-
   export let schedules;
-
-  let pickedDay: string;
-  userPickedDay.subscribe((value) => {
-    pickedDay = value;
-  });
   const allDays = schedules.map((schedule) => schedule.day).flat();
-  const uniqueDays = Array.from(new Set(allDays));
+  const uniqueDays: string[] = Array.from(new Set(allDays));
+
+  let pickedFilter: string = "location";
+
+  function pickFilter(filter) {
+    pickedFilter = filter;
+    userPickedLocation.set("All");
+    userPickedDay.set("All");
+  }
 </script>
 
 <!-- ToDo: Make map reactive. Only display selected locations. -->
 
-<LocationMap />
-<section class="grid gap-4">
-  <div
-    class="grid gap-4 md:grid-cols-2 bg-zinc-300 p-4 rounded border-zinc-900 border-4"
-  >
-    <LocationPicker {schedules} />
-    <DayPicker {uniqueDays} />
+<section class="grid gap-4 sm:px-4">
+  <LocationMap />
+  <div class="grid bg-zinc-300 rounded border-zinc-800 border-4">
+    <div class="grid grid-cols-2 border-b-zinc-800 border-b-4">
+      <button
+        class={`${
+          pickedFilter == "location" ? "bg-red-600" : "bg-zinc-700"
+        } font-stencil font-bold text-xl border-r-2 border-zinc-800 h-full py-2 text-zinc-50 uppercase`}
+        on:click={() => pickFilter("location")}
+      >
+        Filter by Location</button
+      >
+      <button
+        class={`${
+          pickedFilter == "day" ? "bg-red-600" : "bg-zinc-700"
+        } font-stencil font-bold text-xl border-l-2 border-zinc-800 h-full py-2 text-zinc-50 uppercase`}
+        on:click={() => pickFilter("day")}
+      >
+        Filter by Day</button
+      >
+    </div>
+    {#if pickedFilter == "location"}
+      <LocationPicker {schedules} />
+    {:else}
+      <DayPicker {uniqueDays} />
+    {/if}
   </div>
   <div class="flex flex-wrap gap-4">
     <DisplaySchedules {schedules} />

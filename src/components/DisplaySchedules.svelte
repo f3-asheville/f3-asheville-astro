@@ -15,6 +15,20 @@
 
   let displayedSchedules = schedules;
 
+  const order = {
+    Sunday: 1,
+    Monday: 2,
+    Tuesday: 3,
+    Wednesday: 4,
+    Thursday: 5,
+    Friday: 6,
+    Saturday: 7,
+  };
+
+  displayedSchedules.sort(function (a, b) {
+    return order[a.day[0]] - order[b.day[0]];
+  });
+
   $: if (pickedDay == "All" && pickedLocation == "All") {
     displayedSchedules = schedules;
   } else if (pickedDay != "All" && pickedLocation != "All") {
