@@ -22,7 +22,7 @@
   function makePhoneURL(sanityImage) {
     const phoneURL = urlFor(sanityImage)
       .width(400)
-      .quality(80)
+      .quality(90)
       .format("webp")
       .url();
     return phoneURL;
@@ -75,12 +75,12 @@
           /> -->
         </div>
       {/if}
-      <h2 class="mt-4 pb-4 text-3xl md:text-5xl">{event.name}</h2>
+      <h2 class="mt-8 pb-4 text-3xl md:text-5xl">{event.name}</h2>
       <div class="flex flex-col gap-2">
-        <p>Event Date: {parseDate(event.date_time)}</p>
-        <p>Start Time: {parseTime(event.date_time)}</p>
-        <p>Location: {event.location}</p>
-        <p>Organizer: {event.organizer}</p>
+        <p class="text-xl">Event Date: {parseDate(event.date_time)}</p>
+        <p class="text-xl">Start Time: {parseTime(event.date_time)}</p>
+        <p class="text-xl">Location: {event.location}</p>
+        <p class="text-xl">Organizer: {event.organizer}</p>
       </div>
     </div>
   {/each}
