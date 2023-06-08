@@ -35,10 +35,10 @@
 {#if displayedSchedules && displayedSchedules.length}
   {#each displayedSchedules as schedule}
     <div
-      class="grid p-6 mb-4 border-4 rounded shadow bg-zinc-300 border-zinc-900 grow "
+      class="grid p-6 mb-4 border-4 rounded shadow bg-zinc-300 border-zinc-900 grow"
     >
-      <h2 class="pb-2 text-4xl mb-2">{schedule.AO.name}</h2>
-      <div class="flex flex-col gap-2 ">
+      <h2 class="pb-2 text-4xl mb-2">AO: {schedule.AO.name}</h2>
+      <div class="flex flex-col gap-2">
         <div class="flex">
           <p>Days:</p>
           {#each schedule.day as day}
