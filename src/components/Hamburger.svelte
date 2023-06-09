@@ -7,12 +7,12 @@
 </script>
 
 {#if isNavOpen}
+  <div on:click={toggleNav} class=" w-full h-full absolute z-0" />
   <nav
     class="p-8 left-0 right-0 bottom-0 top-0 fixed z-50 bg-zinc-900"
     transition:fade={{ duration: 150 }}
   >
     <!-- Div to allow close on click anywhere -->
-    <div on:click={toggleNav} class=" w-full h-full absolute z-0" />
     <ul class="flex flex-col gap-8 items-end">
       <li>
         <button

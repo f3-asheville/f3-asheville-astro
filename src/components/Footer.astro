@@ -3,58 +3,66 @@ import { Icon } from "astro-icon";
 ---
 
 <footer
-  class="b flex items-center justify-between border-t-4 border-zinc-900 px-4 py-2 shadow"
+  class="4xl:px-0 flex items-center border-t-4 border-zinc-900 px-4 py-2 shadow"
 >
-  <div class="flex gap-4">
-    <a
-      aria-label="Link to Google Map"
-      href="https://www.google.com/maps/d/embed?mid=1vu_HRJFd93InZVySmqwyPe3wbZ72czA&hl=en&ehbc=2E312F&callback=Function.prototype"
-    >
-      <Icon
-        name="mdi:map-marker"
-        class="h-8 text-zinc-800 hover:text-green-600"
-      />
-    </a>
-    <a aria-label="Send us an email" href="mailto: AVL828F3@gmail.com">
-      <Icon name="mdi:email" class="h-8 text-zinc-800 hover:text-green-600" />
-    </a>
-    <a aria-label="open F3 Twitter page" href="https://twitter.com/f3asheville">
-      <Icon name="mdi:twitter" class="h-8 text-zinc-800 hover:text-green-600" />
-    </a>
-    <a
-      aria-label="open F3 Facebook page"
-      href="http://facebook.com/f3ashville/"
-    >
-      <Icon
-        class="h-8 text-zinc-800 hover:text-green-600"
-        name="mdi:facebook"
-      />
-    </a>
-    <a
-      aria-label="open F3 Instagram page"
-      href="https://www.instagram.com/f3asheville/"
-    >
-      <Icon
-        class="h-8 text-zinc-800 hover:text-green-600"
-        name="mdi:instagram"
-      />
-    </a>
-  </div>
-  <div class="flex w-32 flex-col items-end">
-    <p class="text-sm">&copy;2023</p>
-    <a
-      aria-label="site developer's home page"
-      href="https://www.aaronhubbard.dev"
-      class="flex items-center"
-    >
-      <svg
-        class="h-4 w-4 fill-zinc-900 hover:fill-green-600"
-        viewBox="0 0 52.813 36.709"
-        xmlns="http://www.w3.org/2000/svg"
-        ><path
-          d="m234.49 246.277 51.39 138.744h.27V246.277Zm87.754 0v52.733h53.25v-52.733zm-109.45 32.202-19.218 55.687h38.344zm109.45 47.812v58.73h53.25v-58.73zm-137.668 33.844-8.691 24.886h73.728l-8.6-24.886z"
-          transform="matrix(.26458 0 0 .26458 -46.536 -65.16)"></path></svg
+  <div class="mx-auto flex w-full max-w-4xl justify-between">
+    <div class="flex gap-4">
+      <a
+        aria-label="Link to Google Map"
+        href="https://www.google.com/maps/d/embed?mid=1vu_HRJFd93InZVySmqwyPe3wbZ72czA&hl=en&ehbc=2E312F&callback=Function.prototype"
       >
-    </a>
+        <Icon
+          name="mdi:map-marker"
+          class="h-8 text-zinc-800 hover:text-green-600"
+        />
+      </a>
+      <a aria-label="Send us an email" href="mailto: AVL828F3@gmail.com">
+        <Icon name="mdi:email" class="h-8 text-zinc-800 hover:text-green-600" />
+      </a>
+      <a
+        aria-label="open F3 Twitter page"
+        href="https://twitter.com/f3asheville"
+      >
+        <Icon
+          name="mdi:twitter"
+          class="h-8 text-zinc-800 hover:text-green-600"
+        />
+      </a>
+      <a
+        aria-label="open F3 Facebook page"
+        href="http://facebook.com/f3ashville/"
+      >
+        <Icon
+          class="h-8 text-zinc-800 hover:text-green-600"
+          name="mdi:facebook"
+        />
+      </a>
+      <a
+        aria-label="open F3 Instagram page"
+        href="https://www.instagram.com/f3asheville/"
+      >
+        <Icon
+          class="h-8 text-zinc-800 hover:text-green-600"
+          name="mdi:instagram"
+        />
+      </a>
+    </div>
+    <div class="flex w-32 flex-col items-end">
+      <p class="text-sm">&copy;2023</p>
+      <a
+        aria-label="site developer's home page"
+        href="https://www.aaronhubbard.dev"
+        class="flex items-center"
+      >
+        <svg
+          class="h-4 w-4 fill-zinc-900 hover:fill-green-600"
+          viewBox="0 0 52.813 36.709"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            d="m234.49 246.277 51.39 138.744h.27V246.277Zm87.754 0v52.733h53.25v-52.733zm-109.45 32.202-19.218 55.687h38.344zm109.45 47.812v58.73h53.25v-58.73zm-137.668 33.844-8.691 24.886h73.728l-8.6-24.886z"
+            transform="matrix(.26458 0 0 .26458 -46.536 -65.16)"></path></svg
+        >
+      </a>
+    </div>
   </div>
 </footer>
