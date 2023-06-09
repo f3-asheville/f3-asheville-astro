@@ -18,7 +18,7 @@
     <button
       class={`${
         "All" == pickedLocation ? "bg-red-600" : "bg-zinc-700"
-      } px-4 pb-1 pt-2 text-lg   text-zinc-100 font-stencil uppercase font-bold shadow w-full`}
+      } px-4 pb-1 pt-2 text-lg   text-zinc-100 font-stencil uppercase font-bold shadow w-full hover:bg-red-700`}
       on:click={() => {
         userPickedLocation.set("All");
       }}>All</button
@@ -30,7 +30,7 @@
         }}
         class={`${
           day == pickedLocation ? "bg-red-600" : "bg-zinc-700"
-        } px-4 py-1 text-lg  text-zinc-100 font-stencil uppercase font-bold w-full`}
+        } px-4 py-1 text-lg  text-zinc-100 font-stencil uppercase font-bold w-full hover:bg-red-700`}
         >{day}</button
       >
     {/each}

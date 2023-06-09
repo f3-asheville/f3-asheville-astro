@@ -27,7 +27,7 @@
     <button
       class={`${
         "All" == pickedDay ? "bg-red-600" : "bg-zinc-700"
-      } px-4 pb-1 pt-2 text-lg   text-zinc-100 font-stencil font-bold uppercase shadow grow`}
+      } px-4 pb-1 pt-2 text-lg   text-zinc-100 font-stencil font-bold uppercase shadow grow hover:bg-red-700`}
       on:click={() => {
         userPickedDay.set("All");
       }}>All</button
@@ -39,7 +39,7 @@
         }}
         class={`${
           day == pickedDay ? "bg-red-600" : "bg-zinc-700"
-        } px-4 py-1 text-lg text-zinc-100 font-stencil font-bold uppercase grow`}
+        } px-4 py-1 text-lg text-zinc-100 font-stencil font-bold uppercase grow hover:bg-red-700`}
         >{day}</button
       >
     {/each}

@@ -56,15 +56,19 @@
         <div class="flex">
           <p>Days:</p>
           {#each schedule.day as day}
-            <span class="px-2 underline underline-offset-2 font-bold"
-              >{day}</span
-            >
+            <span class="px-2 font-bold">{day}</span>
           {/each}
         </div>
         <p>Style: {schedule.style}</p>
         <p>Neighborhood: {schedule.AO.neighborhood}</p>
         <p>Start Time: {schedule.start_time}</p>
-        <p>Location: {schedule.AO.location_name}</p>
+        <p>
+          Location: <a
+            href={schedule.AO.google_map}
+            class="underline visited:bg-emerald-800 text-red-700 hover:decoration-2"
+            >{schedule.AO.location_name}</a
+          >
+        </p>
       </div>
     </div>
   {/each}

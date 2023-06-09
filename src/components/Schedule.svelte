@@ -27,7 +27,7 @@
       <button
         class={`${
           pickedFilter == "location" ? "bg-red-600" : "bg-zinc-700"
-        } font-stencil font-bold text-xl border-r-2 border-zinc-800 h-full py-2 text-zinc-50 uppercase`}
+        } font-stencil font-bold text-xl border-r-2 border-zinc-800 h-full py-2 text-zinc-50 uppercase hover:bg-red-700`}
         on:click={() => pickFilter("location")}
       >
         Filter by Location</button
@@ -35,7 +35,7 @@
       <button
         class={`${
           pickedFilter == "day" ? "bg-red-600" : "bg-zinc-700"
-        } font-stencil font-bold text-xl border-l-2 border-zinc-800 h-full py-2 text-zinc-50 uppercase`}
+        } font-stencil font-bold text-xl border-l-2 border-zinc-800 h-full py-2 text-zinc-50 uppercase hover:bg-red-700`}
         on:click={() => pickFilter("day")}
       >
         Filter by Day</button

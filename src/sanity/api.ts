@@ -32,7 +32,7 @@ const dummyEvent = [
 ];
 
 export async function getSchedules() {
-  const query = groq`*[_type == "schedule"]{day, name, start_time, style, AO->{name,location_name, neighborhood, location_geopoint}}`;
+  const query = groq`*[_type == "schedule"]{day, name, start_time, style, AO->{name,location_name, neighborhood, google_map}}`;
   const schedules: iSchedules = await useSanityClient().fetch(query);
   if (schedules) {
     return {
