@@ -6,39 +6,41 @@ import NavBar from "@components/NavBar.astro";
 const { height, width } = logo;
 ---
 
-<header class="p-4">
-  <div class="flex items-center justify-between">
-    <a href="/" class="flex items-center gap-4 lg:gap-20">
-      <div class="w-16 sm:w-24 md:w-32 lg:w-40 2xl:w-52">
-        <Picture
-          widths={[80, 160, 240]}
-          sizes="(max-width: 600) 80px, (max-width:800) 160px"
-          alt="The F3 Asheville logo"
-          src={logo}
-          aspectRatio={width / height}
-          format="webp"
-          width={width}
-          height={height}
-          loading="eager"
-        />
-      </div>
-      <div>
-        <h1
-          class="max-[625px]:text-4xl max-[425px]:text-3xl sm:text-5xl md:text-6xl"
-        >
-          F3 Asheville
-        </h1>
+<header class="border-b-4 border-zinc-800 p-4">
+  <div class="mx-auto max-w-4xl">
+    <div class="flex items-center justify-between">
+      <a href="/" class="flex items-center gap-4 lg:gap-20">
+        <div class="w-16 sm:w-24 md:w-32 lg:w-40 2xl:w-52">
+          <Picture
+            widths={[80, 160, 240]}
+            sizes="(max-width: 600) 80px, (max-width:800) 160px"
+            alt="The F3 Asheville logo"
+            src={logo}
+            aspectRatio={width / height}
+            format="webp"
+            width={width}
+            height={height}
+            loading="eager"
+          />
+        </div>
+        <div>
+          <h1
+            class="max-[625px]:text-4xl max-[425px]:text-3xl sm:text-5xl md:text-6xl"
+          >
+            F3 Asheville
+          </h1>
 
-        <h2 class="text-base text-zinc-600 sm:text-2xl md:text-4xl">
-          Fitness.Fellowship.Faith.
-        </h2>
+          <h2 class="text-base text-zinc-600 sm:text-2xl md:text-4xl">
+            Fitness.Fellowship.Faith.
+          </h2>
+        </div>
+      </a>
+      <div class="shrink-0 justify-self-end md:hidden">
+        <HamburgerMenu client:load />
       </div>
-    </a>
-    <div class="shrink-0 justify-self-end md:hidden">
-      <HamburgerMenu client:load />
     </div>
-  </div>
-  <div class="hidden md:block">
-    <NavBar />
+    <div class="mt-8 hidden md:block">
+      <NavBar />
+    </div>
   </div>
 </header>
