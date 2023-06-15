@@ -6,40 +6,37 @@ import NavBar from "@components/NavBar.astro";
 const { height, width } = logo;
 ---
 
-<header class="border-b-4 border-zinc-800 p-4">
-  <div class="mx-auto max-w-4xl">
-    <div class="flex items-center justify-between">
-      <a href="/" class="flex items-center gap-4 lg:gap-20">
-        <div class="w-16 sm:w-24 md:w-32 lg:w-40 2xl:w-52">
-          <Picture
-            widths={[80, 160, 240]}
-            sizes="(max-width: 600) 80px, (max-width:800) 160px"
-            alt="The F3 Asheville logo"
-            src={logo}
-            aspectRatio={width / height}
-            format="webp"
-            width={width}
-            height={height}
-            loading="eager"
-          />
-        </div>
-        <div>
-          <h1
-            class="max-[625px]:text-4xl max-[425px]:text-3xl sm:text-5xl md:text-6xl"
-          >
-            F3 Asheville
-          </h1>
-
-          <h2 class="text-base text-zinc-600 sm:text-2xl md:text-4xl">
-            Fitness.Fellowship.Faith.
-          </h2>
-        </div>
-      </a>
-      <div class="shrink-0 justify-self-end md:hidden">
-        <HamburgerMenu client:load />
+<header
+  class="fixed top-0 left-0 z-50 h-20 w-full border-2 border-b-zinc-900 bg-zinc-50/90 p-4 sm:h-28"
+>
+  <div class="flex h-full items-center justify-between">
+    <a href="/" class="flex items-center gap-4">
+      <div class="w-12 sm:w-16">
+        <Picture
+          widths={[80, 160, 240]}
+          sizes="(max-width: 600) 80px, (max-width:800) 160px"
+          alt="The F3 Asheville logo"
+          src={logo}
+          aspectRatio={width / height}
+          format="webp"
+          width={width}
+          height={height}
+          loading="eager"
+        />
       </div>
+      <div>
+        <h1 class="text-3xl md:text-3xl">F3 Asheville</h1>
+        <div class="hidden sm:block sm:flex">
+          <h2 class="text-base text-zinc-600 sm:text-2xl">Fitness.</h2>
+          <h2 class="text-base text-zinc-600 sm:text-2xl">Fellowship.</h2>
+          <h2 class="text-base text-zinc-600 sm:text-2xl">Faith.</h2>
+        </div>
+      </div>
+    </a>
+    <div class="shrink-0 justify-self-end lg:hidden">
+      <HamburgerMenu client:load />
     </div>
-    <div class="mt-8 hidden md:block">
+    <div class="hidden lg:block">
       <NavBar />
     </div>
   </div>

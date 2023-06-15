@@ -1,24 +1,24 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Hero from "@components/Hero.astro";
+import Hero from "@components/Hero.svelte";
 import { YouTube } from "astro-embed";
+import { getHeroImage } from "@sanity/api";
+const { heroImage, urlFor } = await getHeroImage();
 ---
 
 <Layout title="F3 Asheville">
-  <Hero />
+  <Hero heroImage={heroImage} urlFor={urlFor} client:load />
   <div class="mb-8 grid max-w-4xl gap-16 sm:mx-auto lg:my-8 lg:gap-16">
-    <section
-      class="m-4 grid gap-4 rounded border-4 border-t-8 border-zinc-900 bg-zinc-300 p-8 md:gap-8 lg:gap-x-8 lg:gap-y-16"
-    >
-      <header class="md:px-4">
+    <section class="grid gap-8">
+      <header class="bg-zinc-800 p-8 pb-12">
         <h2
-          class="text-center text-zinc-900 max-[400px]:text-left max-[400px]:text-4xl"
+          class="text-center text-zinc-50 max-[400px]:text-left max-[400px]:text-4xl"
         >
           What is F3?
         </h2>
       </header>
-      <div class="grid gap-8 lg:grid-cols-2">
-        <article class="grid gap-4 lg:p-0">
+      <div class="mx-4 grid gap-8 md:grid-cols-2">
+        <article class="grid gap-4 md:p-0">
           <p class="text-xl">
             F3 is a men's fitness group. It's free: no catches. It's open to all
             men. The workouts aren't not led by professionals but instead by its
@@ -35,7 +35,7 @@ import { YouTube } from "astro-embed";
             We hope you'll come join us in the morning gloom.
           </p>
         </article>
-        <div class="flex items-center justify-center bg-zinc-900 p-4">
+        <div class="z-0 flex items-center justify-center bg-zinc-900 p-4">
           <YouTube id="rGo03Y1ZZ3I" class="h-auto w-full" />
         </div>
       </div>
@@ -48,7 +48,7 @@ import { YouTube } from "astro-embed";
         <h3 class="text-4xl text-zinc-100">All Workouts...</h3>
       </div>
       <div
-        class="grid grid-cols-[auto,_1fr] items-center gap-x-4 gap-y-4 px-4 py-4"
+        class="grid grid-cols-[auto,_1fr] items-center gap-x-4 gap-y-4 px-8 py-4"
       >
         <h4 class="text-5xl">1.</h4>
         <p class="text-xl">Are free of charge</p>
@@ -74,7 +74,7 @@ import { YouTube } from "astro-embed";
       <div class="bg-zinc-800 p-4">
         <h2 class="mb-4 text-zinc-100">The 3 F's</h2>
       </div>
-      <div class="grid gap-4 px-4">
+      <div class="grid gap-4 px-8">
         <h3 class="text-3xl lg:text-4xl">Fitness</h3>
         <p>
           The backbone of F3 is fitness. Each workout is led in rotation by a
@@ -93,7 +93,7 @@ import { YouTube } from "astro-embed";
         </p>
       </div>
 
-      <div class="grid gap-4 px-4">
+      <div class="grid gap-4 px-8">
         <h3 class="text-3xl lg:text-4xl">Fellowship</h3>
         <p>
           Let's face it, for many men, it's hard to form the kind of friendships
@@ -114,7 +114,7 @@ import { YouTube } from "astro-embed";
         </p>
       </div>
 
-      <div class="grid gap-4 px-4">
+      <div class="grid gap-4 px-8">
         <h3 class="text-3xl lg:text-4xl">Faith</h3>
         <p>
           Every workout ends with a Circle of Trust (CoT), and every CoT ends
