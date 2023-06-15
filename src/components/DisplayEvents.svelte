@@ -35,8 +35,6 @@
       .url();
     return fallbackURL;
   }
-
-  console.log({ events });
 </script>
 
 {#if events && events.length}

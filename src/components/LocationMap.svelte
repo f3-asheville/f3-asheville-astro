@@ -5,8 +5,6 @@
   userPickedLocation.subscribe((value) => {
     pickedLocation = value;
   });
-
-  $: console.log(pickedLocation);
 </script>
 
 <div class="h-60 sm:h-96">
