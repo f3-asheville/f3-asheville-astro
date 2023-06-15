@@ -34,7 +34,7 @@
 </script>
 
 <aside
-  class="max-h-[75vh] overflow-hidden border-b-4 border-b-zinc-700 bg-zinc-900"
+  class="max-h-[75vh] overflow-hidden border-b-2 border-b-zinc-700 bg-zinc-900"
 >
   <picture>
     <source
