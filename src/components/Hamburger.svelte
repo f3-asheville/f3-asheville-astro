@@ -41,6 +41,13 @@
           >Upcoming Events</a
         >
       </li>
+      <li>
+        <a
+          href="https://f3nation.com"
+          class="text-3xl text-zinc-50 font-stencil font-bold uppercase hover:text-red-600"
+          >F3 Nation</a
+        >
+      </li>
     </ul>
     <div on:click={toggleNav} class=" w-full h-full absolute z-0" />
   </nav>
