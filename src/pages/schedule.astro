@@ -1,14 +1,22 @@
 ---
-import { getSchedules } from "@sanity/api";
+import { getSchedules, getAlerts } from "@sanity/api";
 import Layout from "@layouts/Layout.astro";
 import Schedule from "@components/Schedule.svelte";
 import PageBanner from "@components/PageBanner.astro";
+import AlertBanner from "@components/AlertBanner.astro";
 const { schedules } = await getSchedules();
+const { alerts } = await getAlerts();
+let visible;
+if (alerts.length == 0 || alerts === undefined) {
+  visible = false;
+} else {
+  visible = true;
+}
 ---
 
-<!-- ToDo: Make map reactive. Only display selected locations. -->
 <Layout title="schedule">
   <PageBanner>Schedule</PageBanner>
+  {visible && <AlertBanner {alerts} />}
   <div class="mx-4 grid max-w-4xl gap-4 md:mx-auto">
     <Schedule schedules={schedules} client:load />
   </div>

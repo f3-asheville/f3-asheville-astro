@@ -84,3 +84,15 @@ export async function getHeroImage() {
     body: new Error("Internal Server Error fetching HeroImage"),
   };
 }
+
+export async function getAlerts() {
+  const alerts = await useSanityClient().fetch(`*[_type == "Alerts"]`);
+  if (alerts) {
+    return {
+      alerts,
+    };
+  } else
+    return {
+      alerts: [],
+    };
+}
