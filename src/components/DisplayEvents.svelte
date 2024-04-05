@@ -5,9 +5,10 @@
 
   function parseTime(ISOString: string) {
     const eventDateObject = new Date(Date.parse(ISOString));
-    return eventDateObject.toLocaleTimeString([], {
+    return eventDateObject.toLocaleTimeString("en-US", {
       hour: "2-digit",
       minute: "2-digit",
+      timeZone: "America/New_York",
     });
   }
   function parseDate(ISOString: string) {
