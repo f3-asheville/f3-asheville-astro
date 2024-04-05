@@ -5,7 +5,10 @@
 
   function parseTime(ISOString: string) {
     const eventDateObject = new Date(Date.parse(ISOString));
-    return eventDateObject.toLocaleTimeString();
+    return eventDateObject.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
   }
   function parseDate(ISOString: string) {
     const eventDateObject = new Date(Date.parse(ISOString));
@@ -61,16 +64,6 @@
               height="520px"
             />
           </picture>
-          <!-- <img
-            srcset={`${makeWideURL(event.image)} 520w, ${makePhoneURL(
-              event.image
-            )} 400w`}
-            src={makePhoneURL(event.image)}
-            alt="F3 event"
-            sizes="(max-width: 450px) 400px, 520px"
-            width="520px"
-            height="520px"
-          /> -->
         </div>
       {/if}
       <h2 class="mt-8 pb-4 text-3xl md:text-5xl">{event.name}</h2>
